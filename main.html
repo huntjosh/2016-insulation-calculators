@@ -1,0 +1,67 @@
+<html>
+<script src="areacalculator.js" type="text/javascript"></script>
+<table>
+  <tr class="calculatorHeaders">
+    <td></td><td>Width</td><td>Length</td><td>Total m2</td>
+  </tr>
+  <tr>
+    <td>Area A</td><td><input size="10" type="text" id="aWidth"></td><td><input size="10" type="text" id="aLength"></td><td><input disabled size="10" type="text" id="aTotal"></td>
+  </tr>
+  <tr>
+    <td>Area B</td><td><input size="10" type="text" id="bWidth"></td><td><input size="10" type="text" id="bLength"></td><td><input disabled size="10" type="text" id="bTotal"></td>
+  </tr>
+  <tr>
+    <td>Area C</td><td><input size="10" type="text" id="cWidth"></td><td><input size="10" type="text" id="cLength"></td><td><input disabled size="10" type="text" id="cTotal"></td>
+  </tr>
+  <tr>
+    <td>Area D</td><td><input size="10" type="text" id="dWidth"></td><td><input size="10" type="text" id="dLength"></td><td><input disabled size="10" type="text" id="dTotal"></td>
+  </tr>
+  <tr>
+    <td>Area E</td><td><input size="10" type="text" id="eWidth"></td><td><input size="10" type="text" id="eLength"></td><td><input disabled size="10" type="text" id="eTotal"></td>
+  </tr>
+  <tr>
+    <td>Area F</td><td><input size="10" type="text" id="fWidth"></td><td><input size="10" type="text" id="fLength"></td><td><input disabled size="10" type="text" id="fTotal"></td>
+  </tr>
+  <tr>
+    <td>Area G</td><td><input size="10" type="text" id="gWidth"></td><td><input size="10" type="text" id="gLength"></td><td><input disabled size="10" type="text" id="gTotal"></td>
+  </tr>
+  <tr>
+    <td colspan="3">Total Square Meters</td><td><input disabled size="10" type="text" id="totalSqm"></td>
+  </tr>
+</table>
+<input type="submit" value="Calculate" id="calculateArea">
+<br>
+<br>
+<table>
+  <tr class="calculatorHeaders">
+  </tr>
+  <tr>
+    <td class="optionText" style="text-align: right;" id="typeOfInsulationTxt">Insulation type: </td><td><select style="width: 220px;" id="insulationSelect"> <option value="Please Select">Please select</option><option value="Underfloor">Underfloor</option><option value="Ceiling">Ceiling</option></select></td>
+  </tr>
+  <tr>
+    <td class="optionText" style="text-align: right;" id="productTxt">Select product: </td><td  style="text-align: right;" ><select style="width: 210px;" disabled id="productSelect"><option></option></select></td>
+</tr>
+<tr>
+    <td class="optionText" style="text-align: right;" id="rValueTxt">Product R-Value:</td><td style="text-align: right;" ><select style="width: 200px;" disabled id="rValueSelect"><option></option></select></td>
+</tr>
+<tr>
+    <td class="optionText" style="text-align: right;" id="widthTxt">Product Width:</td><td style="text-align: right;" ><select style="width: 190px;" disabled id="widthSelect"><option></option></select></td>
+</tr>
+  <tr>
+    <td class="optionText" style="text-align: right;" id="areaTxt">Your total area: </td><td><input disabled size="4" type="text" id="areaTxtBox"></td>
+  </tr>
+<tr>
+  <td class="optionText" style="text-align: center;" >
+<input type="submit" disabled value="Calculate" id="calculateRequired"><br></td>
+<tr><td class="optionText" style="text-align: right;" >Required:</td><td> <input disabled size="4" type="text" id="requiredTxt"></td></tr>
+</table>
+<script>
+document.getElementById("calculateArea").addEventListener("click", calculateArea);
+document.getElementById("calculateArea").addEventListener("click", transferArea);
+document.getElementById("insulationSelect").addEventListener("change", populateProducts);
+document.getElementById("productSelect").addEventListener("change", populateRValues);
+document.getElementById("rValueSelect").addEventListener("change", populateWidths);
+document.getElementById("widthSelect").addEventListener("change", setupArea);
+document.getElementById("calculateRequired").addEventListener("click", calculateReq);
+</script>
+</html>
